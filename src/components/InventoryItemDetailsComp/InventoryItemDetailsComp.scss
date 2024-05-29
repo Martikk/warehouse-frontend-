@@ -1,0 +1,162 @@
+@use '../../styles/partials/mixins'as *;
+@use '../../styles/partials/variables'as *;
+
+.item-details {
+  padding: 8px 30px;
+  font-family: $font;
+
+  &__back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    img {
+      margin-right: 8px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $cloud;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 32px;
+    color: $blk;
+  }
+
+  &__edit-button {
+    font-family: $font;
+    font-weight: $semi-bold;
+    font-size: 16px;
+    margin: 20px 0;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 12px;
+    width: 36px;
+    height: 36px;
+    background-color: $indigo;
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin-left: -3px;
+    }
+
+    @include tablet {
+      color: $white;
+      border-radius: 20px;
+      padding: 8px 16px;
+      width: 81px;
+      height: 38px;
+
+      img {
+        margin-bottom: -3px;
+        margin-right: 2px;
+      }
+    }
+
+    &:hover {
+      background: rgba(46, 102, 229, 0.8);
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__category, &__warehouse  {
+    padding-top: 20px;
+  }
+
+  &__description,
+  &__status,
+  &__quantity,
+  &__category,
+  &__warehouse {
+    @include tablet {
+      flex: 1 1 calc(50% - 40px);
+    }
+
+
+    h2 {
+      font-weight: 600;
+      font-size: 18px;
+      color: $slate;
+      margin-bottom: 10px;
+    }
+
+    p,
+    .status {
+      font-size: 16px;
+      color: $blk;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-weight: 600;
+      white-space: nowrap;
+      background: rgba(21, 132, 99, 0.1);
+      color: $green;
+
+      &.out-of-stock {
+        background: rgba(201, 69, 21, 0.1);
+        color: $red;
+      }
+    }
+  }
+
+  &__name {
+    display: flex;
+  }
+
+  &__info-left {
+    @include tablet {
+      width: 48%;
+    }
+  }
+
+  &__info-right {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      border-left: 0.5px solid $slate;
+      padding-left: 40px;
+      width: 40%;
+    }
+  }
+
+  &__info-right-ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &__info-right-ul li {
+    width: 50%;
+  }
+}

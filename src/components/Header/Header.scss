@@ -1,0 +1,70 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.header {
+    font-family: $font;
+    font-weight: $regular;
+  background-color: $graphite;
+  height: 12.5rem;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  @include desktop {
+    padding-left: 130px;
+    padding-right: 130px;
+  }
+
+  &__site-logo {
+    background-image: url(../../assets/logo/InStock-Logo.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 28px;
+    width: 128.59px;
+    margin-top: 24px;
+    @include tablet {
+      margin: 32px;
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    margin-top: 32px;
+    @include tablet {
+      margin-top: 35px;
+    }
+  }
+
+  &__inventory {
+    background-color: transparent;
+    color: $cloud;
+    height: 36px;
+    width: 164px;
+    border-style: none;
+    @include desktop {
+      width: 107px;
+    }
+  }
+  &__warehouse {
+    background-color: $blk;
+    color: white;
+    height: 36px;
+    width: 164px;
+    border-style: none;
+    border-radius: 20px;
+    @include tablet {
+        height: 38px;
+      width: 107px;
+    }
+  }
+}

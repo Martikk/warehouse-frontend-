@@ -1,0 +1,40 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.edit-warehouse {
+  &__container {
+    margin: 0 1rem 1rem 1rem;
+    background-color: white;
+    border-radius: 4px;
+    position: absolute;
+    top: 18%;
+  }
+
+  &__title-bar {
+    display: flex;
+    justify-content: left;
+    align-items: baseline;
+    border-bottom: solid 1px $slate;
+    padding: 1rem 0.35rem 0;
+
+    @include tablet {
+      justify-content: left;
+      margin-top: 2rem;
+      padding: 0 1rem;
+    }
+
+    @include desktop {
+      margin: 1rem 8.125rem 0;
+      padding-left: 3rem;
+    }
+  }
+
+  &__back-link {
+    cursor: pointer;
+  }
+
+  &__heading {
+    margin-bottom: 1rem;
+    padding-left: 0.25rem;
+  }
+}

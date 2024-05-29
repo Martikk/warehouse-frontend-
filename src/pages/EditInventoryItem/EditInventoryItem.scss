@@ -1,0 +1,49 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables'as *;
+
+.inventory-edit {
+   
+
+    &__titleContainer {
+        display:flex;
+        flex-direction:row;
+        background-color:$white;
+        top:18%;
+        position:absolute;
+        height:13%;
+        width:90%;
+        margin-left:1.5rem;
+        border-radius:4px;
+
+        @include tablet {
+            top:15%;
+        }
+
+        @include desktop {
+            margin-left:5.5rem;
+            width:85%;
+
+        }
+       
+      
+    }
+
+    &__wrapper {
+        display:flex;
+        align-items:baseline;
+        
+    }
+
+
+    &__title {
+        margin-top:0.8rem;
+        margin-left:0.2rem;
+    }
+
+    &__backArrow{
+        margin-left:1rem;
+    }
+    
+}
+
+

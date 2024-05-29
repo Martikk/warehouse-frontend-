@@ -1,0 +1,151 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.warehouse-form {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  @include desktop {
+    margin: 0 8.125rem;
+    flex-direction: row;
+  }
+
+  &__container {
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include tablet {
+      width: 48%;
+      padding: 2rem 2rem;
+    }
+
+    @include desktop {
+      padding-left: 3rem;
+    }
+
+    &--divider {
+      padding-bottom: 1rem;
+      padding-left: 1rem;
+      border-bottom: solid 1px $slate;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      @include tablet {
+        padding: 0 2rem;
+        margin: 2rem 0;
+        border-bottom: none;
+        border-right: solid 1px $slate;
+        width: 48%;
+      }
+
+      @include desktop {
+        padding: 0 3rem;
+      }
+    }
+  }
+
+  &__subheading {
+    margin-bottom: 1rem;
+  }
+
+  &__field-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    width: 100%;
+
+    @include tablet {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__label {
+    font-weight: 600;
+  }
+
+  &__input {
+    border-radius: 1.25rem;
+    border: solid 1px $slate;
+    padding: 0.5rem;
+    color: $blk;
+    transition: border-color 0.5s ease-out;
+
+    &::placeholder {
+      color: $cloud;
+    }
+
+    &:active,
+    &:focus {
+      border-color: $indigo;
+    }
+
+    &--error,
+    &--error:active,
+    &--error:focus {
+      border-color: $red;
+    }
+  }
+
+  &__btns-group {
+    background-color: $light-grey;
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      width: 100%;
+      padding: 1rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+    @include desktop {
+      padding-right: 4rem;
+    }
+  }
+
+  &__btn {
+    height: 2rem;
+    border-radius: 1.25rem;
+    border: none;
+    cursor: pointer;
+    padding: 0 1rem 0;
+    background-color: $indigo;
+    color: white;
+    align-content: center;
+
+    &:hover {
+      background-color: $graphite;
+    }
+
+    &--cancel {
+      height: 2rem;
+      width: 8.65rem;
+      margin-right: 0.5rem;
+      border-radius: 1.25rem;
+      border: solid 1px $slate;
+      padding: 0 1rem;
+      background-color: white;
+      color: $slate;
+
+      &:hover {
+        border-color: $indigo;
+        color: $indigo;
+        background-color: white;
+      }
+
+      @include tablet {
+        width: 4.5rem;
+      }
+    }
+  }
+}

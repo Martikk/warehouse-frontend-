@@ -1,0 +1,43 @@
+@use "typography" as *;
+
+$tablet-width: 768px;
+
+$desktop-width: 1280px;
+
+//font family
+$font: "TitilliumWeb";
+
+// font weights
+$regular: 400;
+$semi-bold:600;
+
+
+//Primary Colors
+
+$blk: #13182C;
+$indigo: #2E66E5;
+$white: #FFFFFF;
+
+//Secondary Colors
+$slate: #5C667E;
+$cloud: #BDC5D5;
+
+
+//Background Colors
+
+$graphite: #232940;
+$light-grey:#F7F8F9;
+
+//Supporting Colors
+$green: #158463;
+$red: #C94515;
+
+
+
+//Tag Background Colors - In Stock and Out of Stock 
+
+//add opacity: .07; property value to the tag in scss styles
+
+$instock: #158463;
+$outofstock: #C94515;
+$border-tag:1.25rem; //20px

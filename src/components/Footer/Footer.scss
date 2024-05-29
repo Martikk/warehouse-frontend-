@@ -1,0 +1,14 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+.footer{
+    display: flex;
+    justify-content: center;
+    &__copyright{
+        font-family: $font;
+        font-weight: $regular;
+        color: $slate;
+        margin:32px;
+    }
+}

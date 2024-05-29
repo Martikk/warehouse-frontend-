@@ -1,0 +1,287 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.warehouse-list {
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: $white;
+    box-shadow: 0 2px 5px 0 rgba(19, 24, 44, 0.1);
+    padding: 16px;
+    border-bottom: 1px solid $cloud;
+
+    h1 {
+      font-family: $font;
+      font-weight: $semi-bold;
+      font-size: 24px;
+      color: $blk;
+      margin-bottom: 16px;
+
+      @include tablet {
+        font-size: 32px;
+      }
+    }
+
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+      gap: 5%;
+    }
+
+    @include desktop {
+      gap: 30%;
+    }
+  }
+
+  &__search {
+    border: 1px solid $cloud;
+    border-radius: 20px;
+    width: 100%;
+    height: 38px;
+    padding: 8px;
+    margin-bottom: 16px;
+    background: url('../../assets/icons/search.svg') no-repeat right 10px center;
+    background-size: 20px 20px;
+
+    @include tablet {
+      width: 185px;
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+
+    @include desktop {
+      width: 274px;
+    }
+  }
+
+  &__add-button {
+    border-radius: 20px;
+    padding: 8px 16px;
+    background: $indigo;
+    color: $white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    margin-top: 16px;
+
+    &:hover {
+      background: rgba(46, 102, 229, 0.8);
+      transform: scale(1.05);
+    }
+
+    @include tablet {
+      width: auto;
+      margin-top: 0;
+    }
+  }
+
+  &__table {
+
+    &-header,
+    &-row {
+      div {
+        display: flex;
+        align-items: center;
+        padding: 4px 0;
+
+        .sort-icon {
+          width: 16px;
+          height: 16px;
+          margin-left: 8px;
+        }
+      }
+    }
+
+    &-header {
+      display: none;
+      background: $light-grey;
+      font-weight: $semi-bold;
+      cursor: pointer;
+
+      @include tablet {
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr 3fr 0.5fr;
+        padding: 8px 30px;
+      }
+    }
+
+    &-row {
+      transition: background-color 0.3s ease;
+
+      &:nth-child(even) {
+        background: $white;
+      }
+
+      &:nth-child(odd) {
+        background: rgba(247, 248, 249, 0.7);
+      }
+
+      &:hover {
+        background-color: $light-grey;
+      }
+
+      a {
+        color: $indigo;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $blk;
+        }
+      }
+
+      .warehouse-list__contact-info {
+        @include tablet {
+          flex-direction: row;
+        }
+      }
+
+      .warehouse-list__action-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-right: 8px;
+
+        img {
+          width: 20px;
+          height: 20px;
+        }
+
+        &:hover img {
+          filter: brightness(0.8);
+        }
+      }
+    }
+  }
+
+  &__header-action {
+    @include tablet {
+      flex-direction: row;
+      gap: 32px;
+    }
+  }
+
+  &__table-row {
+    display: flex;
+    flex-direction: row;
+    padding: 8px 16px;
+    border-bottom: 1px solid $cloud;
+    flex-wrap: wrap;
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: 2fr 2fr 2fr 3fr 0.5fr;
+      grid-template-areas:
+        "warehouse contact-info address contact-name actions";
+      padding: 8px 30px;
+
+      li:nth-child(1) {
+        grid-area: warehouse;
+      }
+
+      li:nth-child(2) {
+        grid-area: address;
+      }
+
+      li:nth-child(3) {
+        grid-area: contact-info;
+      }
+
+      li:nth-child(4) {
+        grid-area: contact-name;
+      }
+
+      li:nth-child(5) {
+        grid-area: actions;
+      }
+    }
+
+    li {
+      width: 50%;
+      padding-bottom: 20px;
+    }
+
+    &__actions {
+      width: 100%;
+    }
+
+    &__action-button-edit {
+      padding-left: 45%;
+
+      @include tablet {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.hidden-desktop {
+  @include tablet {
+    display: none;
+  }
+}
+
+.delete{
+  height: 100vh;
+  width: 100vw;
+  padding: 16px;
+  background-color: white;
+  @include tablet{
+    height: 262px;
+    width: 672px;
+  }
+  box-shadow: 0px 2px 5px 0px #13182C1A;
+
+  
+  &__exit-button{
+    display: flex;
+    margin-left: auto;
+    border: none;
+    background-color: transparent;
+    
+  }
+  &__content{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @include tablet{
+        padding: 16px;
+      }
+  }
+
+  &__text-container{}
+  &__heading{}
+  &__description{}
+  &__button-container{
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+      @include tablet{
+          width: 30%;
+          margin-left: auto;
+      }
+
+  }
+  &__cancel-button{
+      color: $slate;
+      background-color: white;
+      width: 40%;
+      height: 36px;
+      border-radius: 20px;
+      border: 1px solid $cloud;
+  }
+  &__delete-button{
+      color: $white;
+      background-color: $red;
+      width: 40%;
+      height: 36px;
+      border-radius: 20px;
+      border: none;
+  }
+}
